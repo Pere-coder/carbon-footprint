@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from carbon_calculator.views import footprint_calculator, signUp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', footprint_calculator, name='carbon-calculator'),
+    path('signup/', signUp, name='signup')
 ]

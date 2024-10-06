@@ -1,6 +1,6 @@
 from django import forms
 from .models import EnergyUsage, Travel, FoodConsumption, WasteManagement
-
+from django.contrib.auth.models import User
 
 class EnergyUsageForm(forms.ModelForm):
     class Meta:
@@ -21,3 +21,9 @@ class WasteManagementForm(forms.ModelForm):
     class Meta:
         model = WasteManagement
         fields = ['waste_kg', 'recycling_percentage'] 
+
+class SignUp(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+        
